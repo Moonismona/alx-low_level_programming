@@ -6,22 +6,24 @@
 */
 int main(void)
 {
-	int t;
-	int o;
+	int digit1, digit2;
 
-	for (t = 0; t <= 9; t++)
+	for (digit1 = 0; digit1 < 9; digit1++)
 	{
-		for (o = 0; o <= 9; o++)
+		for (digit2 = digit1 + 1; digit2 < 10; digit2++)
 		{
-			putchar(t + '0');
-			putchar(o + '0');
-if (!(t == 9 && o == 9))
-				{
-	      putchar(',');
-	      putchar(' ');
-				}
+			putchar((digit1 % 10) + '0');
+			putchar((digit2 % 10) + '0');
+
+			if (digit1 == 8 && digit2 == 9)
+				continue;
+
+			putchar(',');
+			putchar(' ');
 		}
 	}
-putchar('\n');
-return (0);
+
+	putchar('\n');
+
+	return (0);
 }
